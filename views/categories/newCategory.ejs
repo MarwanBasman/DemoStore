@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Category</title>
+  </head>
+  <body>
+    <h1>ADD A Category</h1>
+    <form action="/categories" method="Post">
+      <input type="text" name="name" />
+      <button>Add Category</button>
+    </form>
+    <form action="/categories?_method=Delete" method="post">
+      <select name="name" id="name">
+        <% for (let category of categories) { %>
+          <option value="<%=category.name %>">
+            <%=category.name %>
+          </option>
+        <% } %>
+      </select>
+      <Button>Delete Category</Button>
+    </form>
+    <a href="/categories">Back</a>
+  </body>
+</html>
